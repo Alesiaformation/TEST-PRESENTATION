@@ -1,0 +1,8 @@
+{
+  "name": "Remix Alésia Formation - Présentation Admission",
+  "description": "Présentation web interactive pour la session d\u0027accueil des tests d\u0027admission d\u0027Alésia Formation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

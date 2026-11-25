@@ -1,0 +1,299 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --cyan: #12AEDB;
+    --cyan-ink: #0A8DB9;
+    --cyan-soft: #D3F0FA;
+
+    --teal: #2BB3A3;
+    --teal-ink: #13806F;
+    --teal-soft: #D5F1EE;
+
+    --orange: #F39200;
+    --orange-ink: #B35A00;
+    --orange-soft: #FDE5C2;
+
+    --ink: #10222E;
+    --ink-deep: #0E1A22;
+
+    --bg: #F3F7F9;
+    --card: #FFFFFF;
+    --line: #DCE6EB;
+    --line-strong: #B9C8D0;
+
+    --text: #2E3F4A;
+    --muted: #4E606B;
+    --track: #D6E1E7;
+  }
+
+  body {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 400;
+    color: var(--text);
+    background-color: var(--bg);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  h1, h2, h3, h4, .font-spartan {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.035em;
+    line-height: 0.88;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+.font-spartan {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.035em;
+  line-height: 0.88;
+}
+
+.font-spartan-700 {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.92;
+}
+
+.font-outfit {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Texte en contour pour un mot d'accroche */
+.text-stroke-cyan {
+  color: transparent;
+  -webkit-text-stroke: 3px #0A8DB9;
+}
+
+.text-stroke-orange {
+  color: transparent;
+  -webkit-text-stroke: 3px #B35A00;
+}
+
+/* Grands chiffres */
+.stat-num {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 800;
+  font-size: 75px;
+  letter-spacing: -0.03em;
+  line-height: 0.88;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 1. Pilule sur-titre */
+.ds-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  border-radius: 22px;
+  color: #0E1A22;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  align-self: flex-start;
+  white-space: nowrap;
+  width: fit-content;
+  line-height: 1.2;
+}
+
+.ds-pill-orange { background-color: #F39200; color: #0E1A22; }
+.ds-pill-teal { background-color: #2BB3A3; color: #0E1A22; }
+.ds-pill-cyan { background-color: #12AEDB; color: #0E1A22; }
+
+/* Sur-titre texte */
+.ds-kicker {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  line-height: 1.2;
+}
+
+/* Accroche */
+.ds-lead {
+  font-family: 'Outfit', sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1.35;
+  color: #2E3F4A;
+  text-wrap: pretty;
+}
+.ds-lead strong {
+  font-weight: 600;
+  color: #10222E;
+}
+
+/* 2. Bouton principal (CTA) */
+.ds-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  height: 64px;
+  padding: 0 32px;
+  border-radius: 32px;
+  background-color: #12AEDB;
+  color: #0E1A22;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ds-cta:hover {
+  background-color: #F39200;
+  transform: translateX(6px);
+}
+
+/* 3. Bouton-onglet */
+.ds-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  height: 76px;
+  padding: 0 28px;
+  border-radius: 38px;
+  border: 2px solid #B9C8D0;
+  background-color: #FFFFFF;
+  color: #10222E;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+.ds-tab-btn:hover {
+  border-color: #F39200;
+}
+.ds-tab-btn[aria-pressed="true"],
+.ds-tab-btn.active {
+  background-color: #12AEDB;
+  border-color: #12AEDB;
+  color: #0E1A22;
+}
+.ds-tab-num {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 800;
+  font-size: 26px;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+/* 4. Carte de contenu */
+.ds-card {
+  background-color: #FFFFFF;
+  border: 1px solid #DCE6EB;
+  border-radius: 22px;
+  padding: 44px 40px;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.2s ease;
+}
+.ds-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 44px rgba(16, 34, 46, 0.12);
+}
+
+.ds-icon-box {
+  width: 88px;
+  height: 88px;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0E1A22;
+  flex-shrink: 0;
+}
+
+/* 5. Panneau de détail */
+.ds-detail-panel {
+  background-color: #FFFFFF;
+  border-radius: 28px;
+  border: 1px solid #DCE6EB;
+  border-top-width: 12px;
+  padding: 46px 54px;
+  box-shadow: 0 18px 40px rgba(16, 34, 46, 0.06);
+}
+
+/* 6. Frise verticale : seul dégradé autorisé */
+.ds-timeline-line {
+  width: 4px;
+  background: linear-gradient(180deg, #12AEDB 0%, #2BB3A3 50%, #F39200 100%);
+  transform-origin: top center;
+  animation: drawLineDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes drawLineDown {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+/* 7. Grille de mots-clés */
+.ds-keyword-tile {
+  height: 150px;
+  border-radius: 20px;
+  border: 2px solid #B9C8D0;
+  background-color: #FFFFFF;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.22s ease;
+}
+.ds-keyword-tile:hover {
+  transform: translateY(-4px);
+  border-color: #F39200;
+  box-shadow: 0 16px 32px rgba(16, 34, 46, 0.08);
+}
+
+/* Cascade entry animation for slide children (translateY 32px -> 0, opacity 0 -> 1) */
+@keyframes cascadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cascade-item {
+  animation: cascadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.cascade-delay-1 { animation-delay: 0.06s; }
+.cascade-delay-2 { animation-delay: 0.12s; }
+.cascade-delay-3 { animation-delay: 0.18s; }
+.cascade-delay-4 { animation-delay: 0.24s; }
+.cascade-delay-5 { animation-delay: 0.30s; }
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .cascade-item, .ds-timeline-line {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
